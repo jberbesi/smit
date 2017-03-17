@@ -1,0 +1,224 @@
+﻿a {
+	text-decoration:none;
+	color:#333333;
+}
+
+a:hover {
+	text-decoration:none;
+	color:#333333;
+
+}
+
+
+.inicio {
+	background-image:url('/img/fondo_main.png');
+	background-repeat:repeat-x;	
+}
+
+.interna {
+	background-image:url('/img/fondo_interna.png');
+	background-repeat:repeat-x;	
+}
+
+.textos {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 9pt;
+	color: #333333;
+}
+
+.foto_interna_der img {
+    border: 1px solid #cccccc;    
+    margin-left:15px; 
+    margin-bottom:10px;
+    margin-top:5px;      
+    float:right;
+}
+
+
+.subtitulos {
+  font-size: 10pt;
+  color: #CB2F2A;
+}
+
+.subtitulos_blancos {
+  font-size: 10pt;
+  color: #ffffff;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+
+}
+
+
+.form{    
+     
+    font-family:Arial, Helvetica, sans-serif,Arial,Verdana,verdana,arial;
+    font-size:11px;
+    color: #333333;
+    background-color:#ffffff;   
+    border-color:#c0c0c0;    
+    border-style: solid;	
+	border-width:1px;
+	height:25px; 
+	font-size:10pt; 
+               
+     }
+     
+.boton {
+	background-color:#666666;
+	border-color:#666666;
+	color:#FFFFFF;
+	font-family:Arial, Helvetica, sans-serif,verdana,arial;
+	font-size:9pt;
+	font-weight:bold;
+	cursor:hand;
+	border-style: solid;
+	
+}
+ 
+
+
+.menusup {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #231F20;
+}
+.azul {
+	background-color: #316FE1;
+}
+.menumain {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #FFFFFF;
+	text-decoration:none;
+}
+
+.menumain:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10pt;
+	color: #cccccc;
+	text-decoration:none;
+
+}
+
+
+.separador {
+	background-color: #FFFFFF;
+}
+.style9 {
+	background-color: #C0D3F5;
+}
+.style10 {
+	text-align: center;
+	background-color: #E6E6E6;
+}
+.style12 {
+	background-image: url('/img/fondo_amazon.png');
+}
+
+.menuaux {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #FFFFFF;
+	text-align: right;
+	text-decoration:none;
+}
+
+.menuaux:hover {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #cccccc;
+	text-align: right;
+	text-decoration:none;
+}
+
+.creditos {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #FFFFFF;
+	text-align: right;
+	text-decoration:none;
+}
+
+.style13 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 8pt;
+	color: #666;
+	text-decoration: none;
+}
+.style14 {
+	color: #A2A4A8;
+}
+.style15 {
+	border-collapse: collapse;
+	border: 1px solid #C0C0C0;
+	border-radius:10px; 
+}
+.style16 {
+	font-size: 14pt;
+	color: #666666;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.style1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666666;
+}
+.style2 {
+  font-family: Arial, Helvetica, sans-serif;
+}
+.style3 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+}
+.style5 {
+  background-color: #E6E6E6;
+}
+
+.style6 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  background-color: #CCCCCC;
+}
+.style7 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #666666;
+}
+.style8 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #97B609;
+}
+
+
+.texto1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  background-color: #F3F3F3;
+}
+
+.texto2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 9pt;
+  background-color: #e6e6e6
+}
+
+.menusuperior {
+	background-color: #E6E6E6;
+	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #666666;
+	background-image: url('img/fondo_menu.png');
+}
+
+.menusuperior:hover {
+	background-color: #E6E6E6;
+	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	text-align: center;
+	color: #ffffff;
+	background-image: url('img/fondo_menu2.png');
+}
+
+
+
