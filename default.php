@@ -1,13 +1,13 @@
 <?php 
 	include 'conectar.php';
 	session_start();
-	print_r($_SESSION);
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
-<title>AQUI PONER EL NOMBRE DEL SISTEMA </title>
+<title>SMIT</title>
+<link rel="icon" type="image/png" href="img/favicon.png" />
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script type="text/javascript">
 	function movepic(img_name,img_src) {
@@ -69,7 +69,7 @@
                                                 					<img alt="" src="img/login_icon.png" />
                                                                 </td>
                         										<td rowspan="8" >
-                        	                    					<img alt="" src="img/tecnovigi.png"  />
+                        	                    					<img alt="" src="img/hola.png"/>
                                                                	</td>
                             								</tr>
                             								<tr>
@@ -142,7 +142,7 @@
                         											<img alt="" src="img/login_icon.png" />
                                                               	</td>
                         										<td rowspan="8" >
-                        											<img alt="" src="img/tecnovigi.png" />
+                        											<img alt="" src="img/hola.png" />
                                                                	</td>
                             								</tr>
                             								<tr>
@@ -210,7 +210,7 @@
                 		<td style="width: 484px" valign="top">&nbsp;
                 		</td>
                 		<td align="right" valign="top">
-        					<span class="style14"><br /></span><span class="style13">© <?php echo date("Y")?>. <strong>TecnoAviation</strong>. All rights reserved<br />Powered by Shennok</span>
+        					<span class="style14"><br /></span><span class="style13">© <?php echo date("Y")?>. <strong>SMIT</strong>. All rights reserved<br />Powered by Shennok</span>
 						</td>
             		</tr>
         		</table>

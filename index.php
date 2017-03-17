@@ -11,7 +11,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
-<title>TecnoAviation - Aviation Management System</title>
+<title>SMIT</title>
+<link rel="icon" type="image/png" href="img/favicon.png" />
 <link rel="stylesheet" type="text/css" href="style.css" />
 <script type="text/javascript" src="js/jquery.js" ></script>
 <script type="text/javascript" src="js/jquery-ui.js" ></script>
@@ -185,7 +186,7 @@ function movepic(img_name,img_src) {
 				<td class="textos" style="width: 213px" valign="top" rowspan="2">
 				<table cellspacing="0" cellpadding="0">
 					<tr>
-						<td align="center" height="120"><a target="contenido" href="123/default.asp"><img alt=""  src=""/><!-- Ruta del logo--></a></td>
+						<td align="center" height="120"><a target="contenido" href="123/default.asp"><img alt=""  src="img/hola.png"/><!-- Ruta del logo--></a></td>
 					</tr>
 					<tr>
 						<td style="height: 550px" valign="top">
@@ -409,10 +410,10 @@ function movepic(img_name,img_src) {
 							<tr>
 								<td align="left" style="height: 22px">
 								<span class="style13"><b> User:</b> <?php echo($_SESSION['usuarioNombre']);?></span><br> 
-								<a href="logout.asp" class="style13">Sign Out (x)</a> | <a href="tecnoaviation.asp" target="new" class="style13">New Window</a></td>
+								<a href="logout.php" class="style13"> Salir </a>
+                              </td>
 								
-								<td align="right" style="height: 22px">
-					<img alt="" src="img/tecnovigi_int.png" border="0"></td>
+								<td align="right" style="height: 22px">&nbsp;</td>
 							</tr>
 							<tr>
 								<td align="right" colspan="2">

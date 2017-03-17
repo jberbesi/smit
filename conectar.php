@@ -29,7 +29,7 @@
     	if ($fila!=0)
 		{
 			$_SESSION['usuario'] = $fila[0];
-			$_SESSION['usuarioNombre'] = $fila[i]." ".$fila[2];
+			$_SESSION['usuarioNombre'] = $fila[1]." ".$fila[2];
 		}
 		return ($fila!=0);
 	}
