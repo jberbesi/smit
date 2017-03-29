@@ -8,7 +8,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
 <title>SMIT</title>
 <link rel="icon" type="image/png" href="img/favicon.png" />
-<link rel="stylesheet" type="text/css" href="style.css" />
+<link rel="stylesheet" type="text/css" href="css/style.css" />
 <script type="text/javascript">
 	function movepic(img_name,img_src) {
 		document[img_name].src=img_src;
