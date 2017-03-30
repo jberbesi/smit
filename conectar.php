@@ -16,6 +16,14 @@
 		}
 	}
 	
+	function abrirConexioni ()
+	{
+		include 'config/database.php';		
+		$cnx = mysql_connect();
+		$cnx = new mysqli($host, $user, $pass, $db);
+		return $cnx;
+	}
+
 	function valido_password ($usu, $pass)
 	{
 		$cnx = abrirConexion();
@@ -32,6 +40,41 @@
 			$_SESSION['usuarioNombre'] = $fila[1]." ".$fila[2];
 		}
 		return ($fila!=0);
+	}
+
+	function autocompletar($searchTerm)
+	{
+    	$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM vendedor WHERE nombre LIKE '%".$searchTerm."%' OR apellido LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
+    	while ($row = $query->fetch_assoc())
+    	{
+        	$data[]=  array("value" => $row['nombre']." ".$row['apellido'], "idnumber" => $row['codigo']);
+    	}
+    	return($data);
+	}
+
+	function ventas_bolivares($codigo,$mes,$ano)
+	{
+		$cnx = abrirConexioni();
+		if ($codigo === "")
+		{
+			$sql = "SELECT codigo_vendedor, SUM(monto) AS suma FROM cotizaciones WHERE status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano." GROUP BY codigo_vendedor";
+		}
+		else
+		{
+			$sql = "SELECT codigo_vendedor, SUM(monto) AS suma FROM cotizaciones WHERE codigo_vendedor='".$codigo."' AND status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano;
+		}
+		$query = $cnx->query($sql);
+		return ($query);
+	}
+
+	function nombre_vendedor($codigo_vendedor)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT nombre, apellido FROM vendedor WHERE codigo ='".$codigo_vendedor."'");
+		$row = $query->fetch_assoc();
+		$nombre = $row['nombre']." ".$row['apellido'];
+		return ($nombre);
 	}
 
 function consultar($clave,$conec)
