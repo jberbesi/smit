@@ -53,16 +53,16 @@
     	return($data);
 	}
 
-	function ventas_bolivares($codigo,$mes,$ano)
+	function ventas_bolivares($codigo,$mes,$ano,$vendedor)
 	{
 		$cnx = abrirConexioni();
-		if ($codigo === "")
+		if ($vendedor === "")
 		{
-			$sql = "SELECT codigo_vendedor, SUM(monto) AS suma FROM cotizaciones WHERE status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano." GROUP BY codigo_vendedor";
+			$sql = "SELECT codigo_vendedor, SUM(monto) AS suma, SUM(cant_prodd) AS cantidad FROM cotizaciones WHERE status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano." GROUP BY codigo_vendedor";
 		}
 		else
 		{
-			$sql = "SELECT codigo_vendedor, SUM(monto) AS suma FROM cotizaciones WHERE codigo_vendedor='".$codigo."' AND status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano;
+			$sql = "SELECT codigo, codigo_vendedor, monto AS suma, cant_prodd AS cantidad, fecha_entrega FROM cotizaciones WHERE codigo_vendedor='".$codigo."' AND status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano;
 		}
 		$query = $cnx->query($sql);
 		return ($query);
