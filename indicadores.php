@@ -13,13 +13,13 @@
 		<td width="664" height="399"> 
 	 		<table width="570" border="0" align="center">
 				<tr>
-					<td colspan="5" height="45" class="style11">Reportes de Vendedores</td>
+					<td colspan="5" height="45" class="style11">Indicadores de Gestión</td>
 				</tr>
 				<tr>
 		  			<td class="Negro">
 		  				<b>
 		  					<font size="3" face="Verdana, Arial, Helvetica, sans-serif">
-		  						Indique Reporte con sus Criterios de Consulta
+		  						Indique indicador con sus Criterios de Consulta
 		  					</font>
 		  				</b>
 		  			</td>
@@ -44,10 +44,10 @@
                 				<option class="Negro" value="6"> Junio</option>
                 				<option class="Negro" value="7"> Julio</option>
                 				<option class="Negro" value="8"> Agosto</option>
-                				<option class="Negro" value="9"> Septiembre</option>
+                				<!--option class="Negro" value="9"> Septiembre</option>
                 				<option class="Negro" value="10"> Octubre</option>
                 				<option class="Negro" value="11"> Noviembre</option>
-                				<option class="Negro" value="12"> Diciembre</option>
+                				<option class="Negro" value="12"> Diciembre</option-->
               				</select>
               			</td>
             			<td class="Negro" width="279">
@@ -55,7 +55,7 @@
               				<select name="ano" req="true">
                 				<option class="Negro" value="0">Año</option>    
                 				<option class="Negro" value="2016"> 2016</option>
-								<option class="Negro" value="2017"> 2017</option>
+								<!--option class="Negro" value="2017"> 2017</option-->
               				</select>
               			</td>
           			</tr>
@@ -63,40 +63,18 @@
             			<td width="339" height="42"  class="Negro">
             				<font size="2" face="Verdana, Arial, Helvetica, sans-serif">Vendedor:</font>
               				<input id="Vendedor" class="query" name="vendedor" type="text" size="20" maxlength="20" tipo="nword" etiqueta="Codigo" autocomplete="off" style="height:30px"><input class="des" type="HIDDEN" id="idnumber" name="idnumber"/>
-              </td>
-          </tr>
-          
-          <tr>
-            <td width="339" height="42" class="negro">
-            	<img src="img/rojo.gif">
-            	<a href="#" style="cursor:hand; font-size: 12px;" class="revista1" onClick="javascript:verificar('rep_cotizaciones',document.frm_reportes.mes.value,document.frm_reportes.ano.value, document.frm_reportes.vendedor.value,document.frm_reportes.idnumber.value);return;">
-            			Cotizaciones
-           		</a>
-           	</td>
-            <td  height="45" >
-            	<img src="img/rojo.gif">
-            	<a href="#" style="cursor:hand; font-size: 12px;" class="revista1" onClick="javascript:verificar('rep_ventas_unidades',document.frm_reportes.mes.value,document.frm_reportes.ano.value, document.frm_reportes.vendedor.value,document.frm_reportes.idnumber.value);return;">
-            			Ventas por Unidades
-           		</a>
-            </td>
-          </tr>
-          <tr>
-            <td width="339" height="42" class="negro">
-            	<img src="img/rojo.gif">
-            	<a href="#" style="cursor:hand; font-size: 12px;" class="revista1" onClick="javascript:verificar('rep_ventas_bolivares',document.frm_reportes.mes.value,document.frm_reportes.ano.value, document.frm_reportes.vendedor.value,document.frm_reportes.idnumber.value);return;">
-            			Ventas En Bolivares
-           		</a>
-           	</td>
-
-
-            <td width="339" height="42" class="negro">
-            	<img src="img/rojo.gif">
-            	<a href="#" style="cursor:hand; font-size: 12px;" class="revista1" onClick="javascript:verificar('rep_devoluciones',document.frm_reportes.mes.value,document.frm_reportes.ano.value, document.frm_reportes.vendedor.value,document.frm_reportes.idnumber.value);return;">
-            			Devoluciones
-           		</a>
-           	</td>
-          </tr>  
-        </table>
-    </form>  </td>
-  </tr>
+            			</td>
+          			</tr>
+          			<tr>
+            			<td width="339" height="42" class="negro">
+            				<img src="img/rojo.gif">
+            					<a href="#" style="cursor:hand; font-size: 12px;" class="revista1" onClick="javascript:verificar('ind_grado_cumplimiento',document.frm_reportes.mes.value,document.frm_reportes.ano.value, document.frm_reportes.vendedor.value,document.frm_reportes.idnumber.value);return;">
+            						Grado de Cumplimiento
+           						</a>
+           				</td>
+          			</tr> 
+        		</table>
+    		</form>
+    	</td>
+  	</tr>
 </table> 

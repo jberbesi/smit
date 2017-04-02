@@ -14,14 +14,14 @@
 	$query = ventas_bolivares($codigo,$mes,$ano,$vendedor);
   //print_r($query);
 	?>
-	<title>REPORTE DE VENTAS EN BOLIVARES MES: <?php echo($mes);?> AÑO: <?php echo($ano);?></title>
+	<title>REPORTE DE DEVOLUCIONES MES: <?php echo($mes);?> AÑO: <?php echo($ano);?></title>
 	<table width="700" align="center" cellpadding="0" cellspacing="0" border="0">
 		<tr> 
    			<td width="700"><img src="img/hola.png" > 
       			<table width="350" align="center" border="0">
         			<tr> 
    						   <td class="TituloNegro" align="center">
-          		      <strong>REPORTE DE VENTAS EN BOLIVARES</strong>
+          		      <strong>REPORTE DE DEVOLUCIONES</strong>
           		    </td>
           		</tr>
           		<tr>
@@ -50,7 +50,7 @@
         			<tr bgcolor="#CCCCCC" class="Negro" valign="middle" align="center">
                 <td width="60" ><strong>Código del Vendedor</strong></td>
                 <td width="100" ><strong>Nombre del Vendedor</strong></td>
-       					<td width="80"><strong>Monto Bs.</strong></td>
+       					<td width="80"><strong>Devoluciones Bs.</strong></td>
         			</tr>
         			<tr> 
           				<td height="1" colspan="9" bgcolor="#000099"></td>
@@ -81,7 +81,7 @@
           				<td height="1" colspan="10" bgcolor="#000099"></td>
         			</tr>
         			<tr> 
-          				<td height="17" align="right" valign="middle" bgcolor="#FFFFFF" class="Negro" colspan="2">TOTAL VENTAS EN BOLIVARES: 
+          				<td height="17" align="right" valign="middle" bgcolor="#FFFFFF" class="Negro" colspan="2">TOTAL DEVOLUCIONES EN BOLIVARES: 
             			</td>
           				<td align="right" valign="middle" bgcolor="#FFFFFF" class="Negro"><?php echo(number_format($mont, 2, ',', '.'));?></td>
         			</tr>

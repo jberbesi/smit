@@ -58,12 +58,68 @@
 		$cnx = abrirConexioni();
 		if ($vendedor === "")
 		{
+			$sql = "SELECT codigo_vendedor, SUM(monto_bs) AS suma FROM montos WHERE mes=".$mes." AND ano=".$ano." GROUP BY codigo_vendedor";
+		}
+		else
+		{
+			$sql = "SELECT codigo_vendedor, monto_bs AS suma FROM montos WHERE codigo_vendedor='".$codigo."' AND mes=".$mes." AND ano=".$ano;
+		}
+		//echo $sql;
+		$query = $cnx->query($sql);
+		return ($query);
+	}
+
+	function ventas_unidades($codigo,$mes,$ano,$vendedor)
+	{
+		$cnx = abrirConexioni();
+		if ($vendedor === "")
+		{
 			$sql = "SELECT codigo_vendedor, SUM(monto) AS suma, SUM(cant_prodd) AS cantidad FROM cotizaciones WHERE status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano." GROUP BY codigo_vendedor";
 		}
 		else
 		{
 			$sql = "SELECT codigo, codigo_vendedor, monto AS suma, cant_prodd AS cantidad, fecha_entrega FROM cotizaciones WHERE codigo_vendedor='".$codigo."' AND status = 1 AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano;
 		}
+		$query = $cnx->query($sql);
+		return ($query);
+	}
+
+	function devoluciones_bolivares($codigo,$mes,$ano,$vendedor)
+	{
+		$cnx = abrirConexioni();
+		if ($vendedor === "")
+		{
+			$sql = "SELECT codigo_vendedor, SUM(devolucion) AS suma FROM montos WHERE mes=".$mes." AND ano=".$ano." GROUP BY codigo_vendedor";
+		}
+		else
+		{
+			$sql = "SELECT codigo_vendedor, devolucion AS suma FROM montos WHERE codigo_vendedor='".$codigo."' AND mes=".$mes." AND ano=".$ano;
+		}
+		//echo $sql;
+		$query = $cnx->query($sql);
+		return ($query);
+	}
+
+	function buscar_vendedor($codigo,$vendedor)
+	{
+		$cnx = abrirConexioni();
+		if ($vendedor === "")
+		{
+			$sql = "SELECT codigo, nombre, apellido FROM vendedor";
+		}
+		else
+		{
+			$sql = "SELECT codigo, nombre, apellido FROM vendedor WHERE codigo='".$codigo."'";
+		}
+		//echo $sql;
+		$query = $cnx->query($sql);
+		return ($query);
+	}
+
+	function cotizaciones_vendedor($codigo,$mes,$ano,$vendedor)
+	{
+		$cnx = abrirConexioni();
+		$sql = "SELECT codigo, monto, fecha_emision, status FROM cotizaciones WHERE codigo_vendedor='".$codigo."' AND MONTH(fecha_entrega)=".$mes." AND YEAR(fecha_entrega)=".$ano." ORDER BY fecha_emision";
 		$query = $cnx->query($sql);
 		return ($query);
 	}
@@ -76,35 +132,4 @@
 		$nombre = $row['nombre']." ".$row['apellido'];
 		return ($nombre);
 	}
-
-function consultar($clave,$conec)
-{
-	$cnx = abrirConexion ();
-	$consulta="SELECT codigo from codigo where codigo =".$clave;
-	$resultado=pg_query($cnx,$consulta) or die (pg_last_error());
-	$num = pg_num_rows($resultado);
-	return $num;
-	pg_close($cnx);
-}
-
-function insertar($clave,$conec,$tabla)
-{	
-	$consulta="INSERT INTO ".$tabla." VALUES (".$clave.",now())";
-	$resultado=pg_query($cnx,$consulta) or die (pg_last_error());
-	pg_close($cnx);
-}
-
-function eliminar($clave,$conec)
-{
-	if ($clave=='uno')
-	{
-		$consulta="DELETE FROM codigo WHERE (tiempo <(now() - interval '20 seconds'))";
-	}
-	else
-	{
-		$consulta="DELETE FROM codigo WHERE (codigo = ".$clave.")";
-	}
-	pg_query($cnx,$consulta) or die (pg_last_error());
-	pg_close($cnx);
-}
 ?>

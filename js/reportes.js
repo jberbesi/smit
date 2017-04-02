@@ -24,6 +24,14 @@ function verificar(nombre,mes,ano,vendedor,codigo)
 		alert('Debe indicar un año.');
 		bien = false;
 	}
+	else if (nombre =='rep_cotizaciones')
+	{
+		if ((vendedor=="") || (codigo ==""))
+		{
+			alert('Debe indicar un vendedor.');
+			bien = false;
+		}
+	}
 	if (bien)
 	{
 		ventanaSecundaria (nombre,mes,ano,vendedor,codigo);
