@@ -109,20 +109,21 @@
                                                             <br> 
 															<a href="logout.php" class="style13"> Salir </a>
                               							</td>
-                                                        <td align="right" style="height: 22px">&nbsp;</td>
+                                                        <td align="right" style="height: 22px">
+															<img alt="" width="200px" src="img/mundopc.png" border="0"></td>
 													</tr>
 													<tr>
 														<td align="right" colspan="2">
 															<table style="width: 100%" cellspacing="0" cellpadding="0">
 																<tr>
 																	<td width="150px">
-																		<a href="javascript:reportes();"  onMouseOver="moverimg('mercadeo','img/mercadeo_act.png')" onMouseOut="moverimg('mercadeo','img/mercadeo.png')">
-                                                                        	<img name="mercadeo" alt="" src="img/mercadeo.png" width="112" height="48" border="0">
+																		<a href="javascript:reportes();"  onMouseOver="moverimg('mercadeo','img/reportes2.png')" onMouseOut="moverimg('mercadeo','img/reportes1.png')">
+                                                                        	<img name="mercadeo" alt="" src="img/reportes1.png" width="112" height="48" border="0">
                                                                        	</a>
                                                                    	</td>
 																	<td>
-																		<a href="javascript:configuracion();" onMouseOver="moverimg('operaciones','img/operaciones_act.png')" onMouseOut="moverimg('operaciones','img/operaciones.png')">
-                                                                        	<img name="operaciones" alt="" src="img/operaciones.png" border="0" >
+																		<a href="javascript:configuracion();" onMouseOver="moverimg('operaciones','img/configuracion2.png')" onMouseOut="moverimg('operaciones','img/configuracion1.png')">
+                                                                        	<img name="operaciones" alt="" src="img/configuracion1.png" border="0" width="150px" >
                                                                       	</a>
                                                                   	</td>
 																</tr>

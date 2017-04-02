@@ -48,6 +48,11 @@
 																	?>
 													<form  method="post" >
 														<table style="width: 95%" cellspacing="0" cellpadding="0" align="center">
+                                                        	<tr>
+                        										<td style="height: 20px;" colspan="4" class="style16">
+                                                                	<img alt="" src="img/hola.png" />
+                                                              	</td>
+                            								</tr>
                             								<tr>
                         										<td style="height: 37px;" colspan="4" class="style16">
                         											<strong>Error - Invalido Usuario/Password.</strong>
@@ -69,7 +74,7 @@
                                                 					<img alt="" src="img/login_icon.png" />
                                                                 </td>
                         										<td rowspan="8" >
-                        	                    					<img alt="" src="img/hola.png"/>
+                        	                    					<img alt="" width="600px" src="img/mundopc.png"/>
                                                                	</td>
                             								</tr>
                             								<tr>
@@ -122,6 +127,11 @@
 													?>
 													<form  method="post" >
                   										<table style="width: 95%" cellspacing="0" cellpadding="0" align="center">
+                                                        	<tr>
+                        										<td style="height: 20px;" colspan="4" class="style16">
+                                                                	<img alt="" src="img/hola.png" />
+                                                              	</td>
+                            								</tr>
                         									<tr>
                         										<td style="height: 37px;" colspan="4" class="style16">
                         											<strong>Ingresar</strong>
@@ -142,7 +152,7 @@
                         											<img alt="" src="img/login_icon.png" />
                                                               	</td>
                         										<td rowspan="8" >
-                        											<img alt="" src="img/hola.png" />
+                        											<img alt="" width="600px" src="img/mundopc.png"/>
                                                                	</td>
                             								</tr>
                             								<tr>
