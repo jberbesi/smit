@@ -177,4 +177,11 @@
 		mysqli_close($cnx);
 		return ($nombre);
 	}
+
+	function modificar_parametros($cotizacion,$unidades,$bolivares,$devoluciones)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("UPDATE parametros SET porcetaje_cotizaciones =".$cotizacion.", ventas_bolibares =".$bolivares.", piezas =".$unidades.", procetanje_devoluciones =".$devoluciones);
+		mysqli_close($cnx);
+	}
 ?>
