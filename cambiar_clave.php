@@ -6,24 +6,49 @@
 		exit;
 	}
 	include 'conectar.php';
-	$cambio = false;
-	$igual = 3;	 
+	If (isset($_POST['igual']))
+	{
+		$igual = $_POST['igual'];	
+	}
+	else
+	{
+		$igual = 0;
+	}
 	If (isset($_POST['clvact']))
 	{
+		
 		$actual = $_POST['clvact'];	
-		$cambio = verificar_clave($_SESSION['usuario'],$_POST['clvact']);
+		$igual = verificar_clave($_SESSION['usuario'],$_POST['clvact']);
+	}
+	else
+	{
+		$actual = "";
+	}
+	If (isset($_POST['clnv']))
+	{
+		$clnv = $_POST['clnv'];
+		$clco = $_POST['clco'];
+		cambiar_clave ($_SESSION['usuario'],$_POST['clnv']);
+		$igual = 1;
+		$actual =2; 
 	}
 ?>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"/>
+<link rel="stylesheet" type="text/css" href="css/style.css" />
+<script type="text/javascript" src="js/clave.js" ></script>
+</head>
 <body leftmargin="0" rightmargin="0" topmargin="0" bottommargin="0" marginheight="0" marginwidth="0">
 	
     <table border="0" width="700" align="center">
   		<tr>
 			<td colspan="5" height="45" class="style11">Cambiar Clave</td>
 		</tr>
-        <?php if(($cambio == false) && ($igual == 3)) { ?>
+        <?php if(($actual == "") || ($igual > 2)) { ?>
         <tr>
 			<td class="Negro" colspan="4" align="center"> 
-				<form action="cambio_clave.asp" method="post" name="estadoForm"> 
+				<form action="cambiar_clave.php" method="post" name="estadoForm"> 
 					<table align="center" class="style2">
 						<tr>
 					  		<td>
@@ -42,8 +67,8 @@
 		if ($igual == 2) { ?>
        	 <tr>
 			<td class="Negro" colspan="4" align="center"> 
-				<form action="cambio_clave.asp" method="post" name="estadoForm"  onSubmit="javascript:return validar_form(this);")>
-                	<input type="HIDDEN" id="igual" name="igual" value="<%=igual%>" />
+				<form action="cambiar_clave.php" method="post" name="estadoForm"  onSubmit="javascript:return validar_form(this);")>
+                	<input type="HIDDEN" id="igual" name="igual" value="<?php echo($igual); ?>" />
 					<table align="center" class="style2">
 						<tr>
 					  		<td>
@@ -88,7 +113,6 @@
        	<tr>
 			<td colspan="4" height="35" align="center" style="background-color: #EDDADF"><b>
             	Cambio de clave exitoso. Cierre esta aplicacion y acceda al sistema con su nuevo Password!
-                <%Session.Abandon()%>
             </b></td>  
 		</tr>
         <?php } ?>

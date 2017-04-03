@@ -187,6 +187,27 @@
 
 	function verificar_clave($usuario,$clvact)
 	{
-		
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT clave FROM usuarios WHERE  id=".$usuario);
+		if ($query->num_rows <= 1) 
+		{
+			$row=$query->fetch_assoc();
+			if ($row['clave']==$clvact)
+			{
+				return(2);
+			}
+			else
+			{
+				return(3);
+			}
+		}
+		mysqli_close($cnx);
+	}
+
+	function cambiar_clave($usuario,$clnv)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("UPDATE usuarios SET clave ='".$clnv."' WHERE  id=".$usuario);
+		mysqli_close($cnx);
 	}
 ?>
