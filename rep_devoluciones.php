@@ -11,7 +11,7 @@
 	$vendedor 	= $_GET['vendedor'];
 	$cont = 1;
 	$mont = 0;
-	$query = ventas_bolivares($codigo,$mes,$ano,$vendedor);
+	$query = devoluciones_bolivares($codigo,$mes,$ano,$vendedor);
   //print_r($query);
 	?>
 	<title>REPORTE DE DEVOLUCIONES MES: <?php echo($mes);?> AÑO: <?php echo($ano);?></title>

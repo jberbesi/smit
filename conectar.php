@@ -184,4 +184,9 @@
 		$query = $cnx->query("UPDATE parametros SET porcetaje_cotizaciones =".$cotizacion.", ventas_bolibares =".$bolivares.", piezas =".$unidades.", procetanje_devoluciones =".$devoluciones);
 		mysqli_close($cnx);
 	}
+
+	function verificar_clave($usuario,$clvact)
+	{
+		
+	}
 ?>
