@@ -6,9 +6,9 @@
 <head>
 <link href="css/style.css" rel="Stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.js" ></script>
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.js" ></script>
-<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.1/themes/base/minified/jquery-ui.min.css" type="text/css" />
+<script type="text/javascript" src="js/jquery/jquery.js" ></script>
+<script type="text/javascript" src="js/jquery/jquery-ui.js" ></script>
+<link rel="stylesheet" href="css/jquery/jquery-ui.min.css" type="text/css" />
 <script type="text/javascript" src="js/reportes.js" ></script> 
 <title>Reportes -- Indique Criterios Busqueda</title>
 </head>
