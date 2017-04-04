@@ -20,6 +20,7 @@
 		}
 		$usuario =buscar_usuarios_id($id);
 		$row = $usuario->fetch_assoc();
+		$estado = $row['status'];
 		$perfiles = perfiles_usuario($id);
 		if ($perfiles->num_rows > 0) 
 		{
@@ -41,6 +42,7 @@
 	else
 	{
 		$id = id_mayor();
+		$estado = 1;
 	}
 ?>
 <script type="text/javascript" src="js/form_usuario.js" ></script>
@@ -142,8 +144,8 @@
 					<tr>
 						<td height="30" class="Negro" align="right"> <strong>Estado</strong>:</td>
 						<td colspan="3" class="Negro"><p> <label> 
-							<input type="radio" id="estadousuarioH" name="estadousuario" value="1" style="border=0;" <?php if (($req == "nuevo")||($row['status'] == 1) ) { ?> checked <?php } ?>>Habilitado </label>
-							<input type="radio" id="estadousuarioD" name="estadousuario" value="0" style="border=0;" <?php if ($row['status'] == 0) { ?> checked <?php } ?> >
+							<input type="radio" id="estadousuarioH" name="estadousuario" value="1" style="border=0;" <?php if (($req == "nuevo")||($estado == 1) ) { ?> checked <?php } ?>>Habilitado </label>
+							<input type="radio" id="estadousuarioD" name="estadousuario" value="0" style="border=0;" <?php if ($estado == 0) { ?> checked <?php } ?> >
 							<label> Deshabilitado</label><br></p>
 						</td>
 					</tr>
