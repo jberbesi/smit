@@ -6,6 +6,8 @@
 		exit;
 	}
 	include 'conectar.php';
+  	validar_seguridad($_SESSION['usuario'],5);
+
 	If (isset($_POST['igual']))
 	{
 		$igual = $_POST['igual'];	

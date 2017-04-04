@@ -1,5 +1,7 @@
 <?php
+	session_start();
 	include 'conectar.php';
+	validar_seguridad($_SESSION['usuario'],3);
 	$parametro = parametros();
 	$para = $parametro->fetch_assoc();
 ?>

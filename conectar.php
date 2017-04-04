@@ -26,7 +26,7 @@
 	function valido_password ($usu, $pass)
 	{
 		$cnx = abrirConexion();
-		$consulta = "SELECT * FROM usuarios WHERE login='" . $usu . "' AND clave='" . $pass . "'";
+		$consulta = "SELECT * FROM usuarios WHERE login='" . $usu . "' AND clave='" . $pass . "' AND status = 1";
 		$resultado = mysql_query($consulta, $cnx);
 		if (!$resultado) {
     		echo 'No se pudo ejecutar la consulta: ' . mysql_error();
@@ -48,6 +48,18 @@
     	while ($row = $query->fetch_assoc())
     	{
         	$data[]=  array("value" => $row['nombre']." ".$row['apellido'], "idnumber" => $row['codigo']);
+    	}
+    	mysqli_close($cnx);
+    	return($data);
+	}
+
+	function autocompletarU($searchTerm)
+	{
+    	$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM usuarios WHERE nombre LIKE '%".$searchTerm."%' OR apellido LIKE '%".$searchTerm."%' ORDER BY nombre ASC");
+    	while ($row = $query->fetch_assoc())
+    	{
+        	$data[]=  array("value" => $row['nombre']." ".$row['apellido'], "idnumber" => $row['id']);
     	}
     	mysqli_close($cnx);
     	return($data);
@@ -209,5 +221,114 @@
 		$cnx = abrirConexioni();
 		$query = $cnx->query("UPDATE usuarios SET clave ='".$clnv."' WHERE  id=".$usuario);
 		mysqli_close($cnx);
+	}
+
+	function buscar_usuarios()
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM USUARIOS");
+		mysqli_close($cnx);
+		return ($query);
+	}
+
+	function buscar_usuarios_id($usuario)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM usuarios WHERE  id=".$usuario);
+		mysqli_close($cnx);
+		return ($query);
+	}
+
+	function id_mayor()
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT MAX(id) AS id FROM usuarios");
+		$row=$query->fetch_assoc();
+		$id = $row['id'] + 1;
+		mysqli_close($cnx);
+		return ($id);
+	}
+
+	function perfiles_usuario($id)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM perfil WHERE id_usuario =".$id);
+		mysqli_close($cnx);
+		return ($query);
+	}
+
+	function verificar_login($login)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM usuarios WHERE  login='".$login."'");
+		mysqli_close($cnx);
+		if ($query->num_rows > 0) 
+		{
+			return(true);
+		}
+		else
+		{
+			return(false);
+		}
+		mysqli_close($cnx);
+	}
+
+	function insertar_usuario($nombre,$apellido,$login,$password,$estado)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("INSERT INTO usuarios (nombre,apellido,login,clave,status) VALUES ('".$nombre."','".$apellido."','".$login."','".$password."',".$estado.")");
+		mysqli_close($cnx);
+	}
+
+	function insertar_perfil($id_usuario,$id_perfil)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("INSERT INTO perfil (id_usuario,id_perfil) VALUES (".$id_usuario.",".$id_perfil.")");
+		mysqli_close($cnx);
+	}
+
+	function verificar_login1($login,$id)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM usuarios WHERE  login='".$login."' AND id !=".$id);
+		mysqli_close($cnx);
+		if ($query->num_rows > 0) 
+		{
+			return(true);
+		}
+		else
+		{
+			return(false);
+		}
+		mysqli_close($cnx);
+	}
+
+	function modificar_usuario($nombre,$apellido,$login,$password,$estado,$id)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("UPDATE usuarios SET nombre='".$nombre."', apellido='".$apellido."', login='".$login."', clave='".$password."', status=".$estado." WHERE id =".$id);
+		mysqli_close($cnx);
+	}
+
+	function eliminar_perfil($id)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("DELETE FROM perfil WHERE id_usuario =".$id);
+		mysqli_close($cnx);
+	}
+
+
+	function validar_seguridad($id_usuario,$perfil)
+	{
+		$cnx = abrirConexioni();
+		$query = $cnx->query("SELECT * FROM perfil WHERE id_usuario=".$id_usuario." AND id_perfil=".$perfil);
+		if ($query->num_rows == 0) 
+		{ ?>
+			<SCRIPT>
+				alert ("Usuario no autorizado para ingresar a este modulo!");
+				window.location="inicio.html";
+			</SCRIPT>
+	<?php
+		}
 	}
 ?>

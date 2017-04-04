@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: localhost
--- Tiempo de generación: 02-04-2017 a las 15:53:04
+-- Tiempo de generación: 04-04-2017 a las 08:04:58
 -- Versión del servidor: 5.5.24-log
 -- Versión de PHP: 5.4.3
 
@@ -3714,6 +3714,35 @@ INSERT INTO `parametros` (`porcetaje_cotizaciones`, `ventas_bolibares`, `piezas`
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `perfil`
+--
+
+CREATE TABLE IF NOT EXISTS `perfil` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `id_perfil` int(11) NOT NULL,
+  `id_usuario` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=35 ;
+
+--
+-- Volcado de datos para la tabla `perfil`
+--
+
+INSERT INTO `perfil` (`id`, `id_perfil`, `id_usuario`) VALUES
+(14, 1, 1),
+(15, 2, 1),
+(16, 3, 1),
+(17, 4, 1),
+(18, 5, 1),
+(30, 1, 3),
+(31, 5, 3),
+(32, 1, 4),
+(33, 3, 4),
+(34, 5, 4);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `usuarios`
 --
 
@@ -3725,7 +3754,7 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
   `clave` varchar(50) NOT NULL COMMENT 'clave acceso',
   `status` int(11) NOT NULL COMMENT 'activo',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla de usuarios del sistema' AUTO_INCREMENT=3 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Tabla de usuarios del sistema' AUTO_INCREMENT=5 ;
 
 --
 -- Volcado de datos para la tabla `usuarios`
@@ -3733,7 +3762,9 @@ CREATE TABLE IF NOT EXISTS `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `login`, `clave`, `status`) VALUES
 (1, 'administrador', 'administrador', 'admin', '12345', 1),
-(2, 'Jonnathan', 'Berbesi', 'jberbesi', '12345', 1);
+(2, 'Jonnathan', 'Berbesi', 'jberbesi', '12345', 1),
+(3, 'Pedro', 'Perez', 'pperez', '12345', 1),
+(4, 'Carlos', 'Moreno', 'cmoreno', '12345', 0);
 
 -- --------------------------------------------------------
 

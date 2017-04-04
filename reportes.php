@@ -1,3 +1,8 @@
+<?php
+  session_start();
+  include 'conectar.php';
+  validar_seguridad($_SESSION['usuario'],1);
+?>
 <head>
 <link href="css/style.css" rel="Stylesheet" type="text/css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
